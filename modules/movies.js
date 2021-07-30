@@ -75,7 +75,7 @@ async function search_Movie(mydb,searchWord) {
     fileSize = "["+fileSize+"]";
     fileSize = fileSize.replace("[1MB]", "♨️Subtitle").replace("[0MB]", "♨️Subtitle").replace("[2MB]", "♨️Subtitle").replace("[3MB]", "♨️Subtitle");
     outPut = outPut +`
-*[${fileSize}] ${file_name_without}*
+*${fileSize} ${file_name_without}*
 📌 ${tempLink}
 `;
     var fileid = "";
