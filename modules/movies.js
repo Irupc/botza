@@ -100,37 +100,37 @@ async function findQuesy(searchArray){
   } else if (searchArray.length==2){
     var query = { 
       $text: { 
-        $search: `\"${searchArray[0]}\" \"${searchArray[1]}\"` 
+        $search: `\"${searchArray[0]}\" \"${searchArray[1]}\" -zip -rar -srt -7z` 
       }
     }
   } else if (searchArray.length==3){
     var query = { 
       $text: { 
-        $search: `\"${searchArray[0]}\" \"${searchArray[1]}\" \"${searchArray[2]}\"` 
+        $search: `\"${searchArray[0]}\" \"${searchArray[1]}\" \"${searchArray[2]}\" -zip -rar -srt -7z` 
       }
     }
   } else if (searchArray.length==4){
     var query = { 
       $text: { 
-        $search: `\"${searchArray[0]}\" \"${searchArray[1]}\" \"${searchArray[2]}\" \"${searchArray[3]}\"` 
+        $search: `\"${searchArray[0]}\" \"${searchArray[1]}\" \"${searchArray[2]}\" \"${searchArray[3]}\" -zip -rar -srt -7z` 
       }
     }
   } else if (searchArray.length==5){
     var query = { 
       $text: { 
-        $search: `\"${searchArray[0]}\" \"${searchArray[1]}\" \"${searchArray[2]}\" \"${searchArray[3]}\" \"${searchArray[4]}\"` 
+        $search: `\"${searchArray[0]}\" \"${searchArray[1]}\" \"${searchArray[2]}\" \"${searchArray[3]}\" \"${searchArray[4]}\" -zip -rar -srt -7z` 
       }
     }
   } else if (searchArray.length==6){
     var query = { 
       $text: { 
-        $search: `\"${searchArray[0]}\" \"${searchArray[1]}\" \"${searchArray[2]}\" \"${searchArray[3]}\" \"${searchArray[4]}\" \"${searchArray[5]}\"` 
+        $search: `\"${searchArray[0]}\" \"${searchArray[1]}\" \"${searchArray[2]}\" \"${searchArray[3]}\" \"${searchArray[4]}\" \"${searchArray[5]}\" -zip -rar -srt -7z` 
       }
     }
   } else if (searchArray.length==7){
     var query = { 
       $text: { 
-        $search: `\"${searchArray[0]}\" \"${searchArray[1]}\" \"${searchArray[2]}\" \"${searchArray[3]}\" \"${searchArray[4]}\" \"${searchArray[5]}\" \"${searchArray[6]}\"` 
+        $search: `\"${searchArray[0]}\" \"${searchArray[1]}\" \"${searchArray[2]}\" \"${searchArray[3]}\" \"${searchArray[4]}\" \"${searchArray[5]}\" \"${searchArray[6]}\" -zip -rar -srt -7z` 
       }
     }
   } else{var query ="";}
