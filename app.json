@@ -1,0 +1,56 @@
+{
+  "name": "Whatsbot",
+  "description": "Modular Userbot for Whatsapp",
+  "repository": "https://github.com/TheWhatsBot/WhatsBot",
+  "logo": "https://telegra.ph/file/96ccad5945c18944c5f15.png",
+  "keywords": [
+    "whatsbot",
+    "whatsapp-userbot",
+    "whatsapp-bot",
+    "whatsapp-userbot",
+    "whatsapp"
+  ],
+  "stack": "container",
+  "env": {
+    "SESSION": {
+      "description": "Puppeteer Session. Get it by running genToken.js",
+      "value": ""
+    },
+    "PMPERMIT_ENABLED": {
+      "description": "Enable Pmpermit write true or false only",
+      "value": "true"
+    },
+    "MONGODB_URL": {
+      "description": "MongoDB URL, Get it for free from cloud.mongodb.com",
+      "value": "mongodb+srv://Gamy_Gamin:Gamy_Gamin@cluster0.wujnj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    },
+    "PMPERMIT_MUTETIME": {
+      "description": "How many seconds an user get muted if he is spamming. Default is 30 Minutes (1800 Secs)",
+      "value": "1800"
+    },
+    "YT_DATA_API_KEY": {
+      "description": "Youtube DATA API key, grab it from cloud.google.com",
+      "value": "AIzaSyDg_rQe5NwCAbCeXx-I9h2Ch5uRlr5QEXQ"
+    },
+    "DEFAULT_TR_LANG": {
+      "description": "Default Translation Language",
+      "value": "en"
+    },
+    "ENABLE_DELETE_ALERT": {
+      "description": "If true & if someone delete message in PM, Bot will send the deleted message in that chat (Exclude Media)",
+      "value": "true"
+    },
+    "OCR_SPACE_API_KEY": {
+      "description": "Get it from https://ocr.space/OCRAPI",
+      "value": "7e4bfe810488957"
+    },
+    "INFOSPACE_API_KEY": {
+      "description": "Get it from https://infospace.club",
+      "value": "6zzl92aoe16bz0cgu3soyf73zu5zeu7x5p9wqn0wdq8k6v4fxuf3o"
+    },
+    "MOVIES_IRUPC": {
+      "description": "IruPC.net DB",
+      "value": "mongodb+srv://Gamy_Gamin:Gamy_Gamin@cluster0.ygf7l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    }
+  }
+}
