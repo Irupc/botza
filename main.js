@@ -25,6 +25,7 @@ const shorten = require('./modules/urlshortner');
 const ocr = require('./modules/ocr');
 const emailVerifier = require('./modules/emailverifier');
 const movies = require('./modules/movies');
+const sub = require('./modules/sub');
 
 const client = new Client({ puppeteer: { headless: true, args: ['--no-sandbox'] }, session: config.session });
 
@@ -88,7 +89,8 @@ client.on('message', async msg => {
         }
         else {
             //console.log("Coose else ");
-            msg.reply(data);
+            outPutDex = `${data}\n\n${config.admin_bottom}`
+            msg.reply(outPutDex);
         }
     } else if (msg.body.startsWith("link ")) { // Movie Module
         //console.log("Deleted By client.on.message");
@@ -99,7 +101,8 @@ client.on('message', async msg => {
         }
         else {
             //console.log("Coose else ");
-            msg.reply(data);
+            outPutDex = `${data}\n\n${config.admin_bottom}`
+            msg.reply(outPutDex);
         }
     } else if (msg.body.startsWith("Link ")) { // Movie Module
         //console.log("Deleted By client.on.message");
@@ -110,7 +113,8 @@ client.on('message', async msg => {
         }
         else {
             //console.log("Coose else ");
-            msg.reply(data);
+            outPutDex = `${data}\n\n${config.admin_bottom}`
+            msg.reply(outPutDex);
         }
     } else if (msg.body.startsWith(".Link ")) { // Movie Module
         //console.log("Deleted By client.on.message");
@@ -121,7 +125,32 @@ client.on('message', async msg => {
         }
         else {
             //console.log("Coose else ");
-            msg.reply(data);
+            outPutDex = `${data}\n\n${config.admin_bottom}`
+            msg.reply(outPutDex);
+        }
+    } else if (msg.body.startsWith(".sub ")) { // Movie Module
+        //console.log("Deleted By client.on.message");
+        var data = await sub.mainF(msg.body.replace(".sub ", ""));
+        //console.log("data outputed");
+        if (data == "") {
+            msg.reply("*😢 ඒක නම් මගෙ Data Base එකට Add කරල නෑ.*\n*movie එකේ අකුරු හරියටම දාල තියනවද කියල බලන්න 🤔*");
+        }
+        else {
+            //console.log("Coose else ");
+            outPutDex = `${data}\n\n${config.admin_bottom}`
+            msg.reply(outPutDex);
+        }
+    } else if (msg.body.startsWith(".Sub ")) { // Movie Module
+        //console.log("Deleted By client.on.message");
+        var data = await sub.mainF(msg.body.replace(".Sub ", ""));
+        //console.log("data outputed");
+        if (data == "") {
+            msg.reply("*😢 ඒක නම් මගෙ Data Base එකට Add කරල නෑ.*\n*movie එකේ අකුරු හරියටම දාල තියනවද කියල බලන්න 🤔*");
+        }
+        else {
+            //console.log("Coose else ");
+            outPutDex = `${data}\n\n${config.admin_bottom}`
+            msg.reply(outPutDex);
         }
     }
         else if (msg.body.startsWith(".shorten ")) { // URL Shortener Module
@@ -574,7 +603,23 @@ client.on('message_create', async (msg) => {
             client.sendMessage(msg.to, getdata);
         } else if (msg.body.startsWith(".link ")) { // Movie Module
             //console.log("Deleted By else");
-            var data = await movies.mainF(msg.body.replace(".link ", ""));
+            inputText = msg.body + "||";
+            var data = await movies.mainF(inputText.replace(".link ", ""));
+            //console.log("data outputed");
+            if (data == "error") {
+                client.sendMessage(msg.to, "Error Occures")
+            }
+            else {
+                //console.log("Coose else ");
+                if (inputText.split("||")[1] == ""){
+                    client.sendMessage(msg.to, `${data}`)
+                } else{
+                    outPutText = `🎬 ${inputText.split("||")[1]}\n\n${config.admin_top}\n\n${data}\n\n${config.admin_bottom}`;
+                }
+            }
+        } else if (msg.body.startsWith(".sub ")) { // Sub Module
+            //console.log("Deleted By else");
+            var data = await sub.mainF(msg.body.replace(".sub ", ""));
             //console.log("data outputed");
             if (data == "error") {
                 client.sendMessage(msg.to, "Error Occures")
