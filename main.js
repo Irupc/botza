@@ -623,7 +623,7 @@ client.on('message_create', async (msg) => {
         } else if (msg.body.startsWith(".link ")) { // Movie Module
             //console.log("Deleted By else");
             inputText = msg.body + "||";
-            var data = await movies.mainF(inputText.replace(".link ", ""));
+            var data = await movies.mainF(inputText.split("||")[0].replace(".link ", ""));
             //console.log("data outputed");
             if (data == "error") {
                 client.sendMessage(msg.to, "Error Occures")
