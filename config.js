@@ -13,5 +13,6 @@ module.exports = {
     infospace_api_key: process.env.INFOSPACE_API_KEY || "6zzl92aoe16bz0cgu3soyf73zu5zeu7x5p9wqn0wdq8k6v4fxuf3o",
     movie_db_url: process.env.MOVIES_IRUPC || "mongodb+srv://Gamy_Gamin:Gamy_Gamin@cluster0.ygf7l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     admin_bottom: process.env.MOVIES_BOTTOM || "©️ _Whats App Movie Bot_ by *iruPC.net*",
-    admin_top: process.env.MOVIES_TOP || "💓 Visit *WhatsApp Movie Bot* for More Links 👇\n*wa.me/+94712882557*"
+    admin_top: process.env.MOVIES_TOP || "💓 Visit *WhatsApp Movie Bot* for More Links 👇\n*wa.me/+94712882557*",
+    limit_iru: process.env.MOVIES_LIMIT || "30"
 }
