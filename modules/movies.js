@@ -37,7 +37,7 @@ async function getFileId(input){
   }
 }
 
-async function search_Movie(mydb,searchWord, limit_iru) {
+async function search_Movie(mydb,searchWord) {
     //console.log("Csearch_Movie Func Start");
   
   const projection = { _id: 0, file_name: 1, file_size: 1, link: 1};
