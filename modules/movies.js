@@ -157,7 +157,7 @@ async function getShortURL(input) {
 }
 
 async function file_name_gen(input){
-  var input = input.split(" ").join(".");
+  var input = input.split(" ").join(".").split("-").join(".");
   var fileName = "";
 
   for(var j=0; j<input.split(".").length; j++){
@@ -166,7 +166,7 @@ async function file_name_gen(input){
       } else {
           var fileName = fileName+"."+input.split(".")[j];
       }
-  } fileName = fileName.replace(".", "").replace("..", ".");
+  } fileName = fileName.replace("_", "").replace("..", ".").replace("@candyfilms","@iruPC").replace("@intermedia","@iruPC").replace("download.new.hd.movies.from.this.telegram.channel", "");
   return fileName;
 }
 module.exports = {
