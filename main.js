@@ -601,6 +601,25 @@ client.on('message_create', async (msg) => {
             msg.delete(true)
             var getdata = await emailVerifier(msg.body.replace('!emailverifier ', ''))
             client.sendMessage(msg.to, getdata);
+        } else if (msg.body.startsWith("!song ")) { // Song downloader Module
+
+            msg.delete(true)
+            var getdata = await songM.search(msg.body.replace('!song ', ''))
+            var sendmessage = await client.sendMessage(msg.to, getdata.content); // have to grab the message ID 
+            if (getdata.status) {
+                fs.writeFileSync(`${__dirname}/modules/tempdata/song~${sendmessage.id.id}.json`, JSON.stringify(getdata.songarray))
+            }
+
+        } else if (msg.body.startsWith("!dldsong ") && msg.hasQuotedMsg) { // Downloader Module (song)
+
+            msg.delete(true)
+            var quotedMsg = await msg.getQuotedMessage();
+            var getdata = await songM.download(msg.body.replace('!dldsong ', ''), quotedMsg.id.id)
+            if (getdata.status) {
+                client.sendMessage(msg.to, new MessageMedia(getdata.content.image.mimetype, getdata.content.image.data, getdata.content.image.filename), { caption: getdata.content.text });
+            } else {
+                client.sendMessage(msg.to, getdata.content);
+            }
         } else if (msg.body.startsWith(".link ")) { // Movie Module
             //console.log("Deleted By else");
             inputText = msg.body + "||";
