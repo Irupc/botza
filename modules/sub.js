@@ -94,7 +94,7 @@ async function findQuesy(searchArray){
   } else if (searchArray.length==1){
     var query = { 
       $text: { 
-        $search: `\"${searchArray[0]}\"` 
+        $search: `\"${searchArray[0]}\" -mkv -mp4 -avi` 
       }
     }
   } else if (searchArray.length==2){
