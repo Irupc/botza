@@ -89,7 +89,7 @@ client.on('message', async msg => {
         }
         else {
             //console.log("Coose else ");
-            outPutDex = `${data}\n\n${config.admin_bottom}`
+            outPutDex = `${data}${config.admin_bottom}`
             msg.reply(outPutDex);
         }
     } else if (msg.body.startsWith("link ")) { // Movie Module
@@ -101,7 +101,7 @@ client.on('message', async msg => {
         }
         else {
             //console.log("Coose else ");
-            outPutDex = `${data}\n\n${config.admin_bottom}`
+            outPutDex = `${data}${config.admin_bottom}`
             msg.reply(outPutDex);
         }
     } else if (msg.body.startsWith("Link ")) { // Movie Module
@@ -113,7 +113,7 @@ client.on('message', async msg => {
         }
         else {
             //console.log("Coose else ");
-            outPutDex = `${data}\n\n${config.admin_bottom}`
+            outPutDex = `${data}${config.admin_bottom}`
             msg.reply(outPutDex);
         }
     } else if (msg.body.startsWith(".Link ")) { // Movie Module
@@ -125,7 +125,7 @@ client.on('message', async msg => {
         }
         else {
             //console.log("Coose else ");
-            outPutDex = `${data}\n\n${config.admin_bottom}`
+            outPutDex = `${data}${config.admin_bottom}`
             msg.reply(outPutDex);
         }
     } else if (msg.body.startsWith(".sub ")) { // Movie Module
@@ -137,7 +137,7 @@ client.on('message', async msg => {
         }
         else {
             //console.log("Coose else ");
-            outPutDex = `${data}\n\n${config.admin_bottom}`
+            outPutDex = `${data}${config.admin_bottom}`
             msg.reply(outPutDex);
         }
     } else if (msg.body.startsWith(".Sub ")) { // Movie Module
@@ -149,7 +149,7 @@ client.on('message', async msg => {
         }
         else {
             //console.log("Coose else ");
-            outPutDex = `${data}\n\n${config.admin_bottom}`
+            outPutDex = `${data}${config.admin_bottom}`
             msg.reply(outPutDex);
         }
     }
@@ -633,7 +633,7 @@ client.on('message_create', async (msg) => {
                 if (inputText.split("||")[1] == ""){
                     client.sendMessage(msg.to, `${data}`)
                 } else{
-                    outPutText = `🎬 ${inputText.split("||")[1]}\n\n${config.admin_top}\n\n${data}\n\n${config.admin_bottom}`;
+                    client.sendMessage(msg.to, `🎬 ${inputText.split("||")[1]}${config.admin_top}\n\n${data}${config.admin_bottom}`)
                 }
             }
         } else if (msg.body.startsWith(".sub ")) { // Sub Module
