@@ -51,6 +51,14 @@
     "MOVIES_IRUPC": {
       "description": "IruPC.net DB",
       "value": "mongodb+srv://Gamy_Gamin:Gamy_Gamin@cluster0.ygf7l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    },
+    "MOVIES_BOTTOM": {
+      "description": "Movie Bottom Text",
+      "value": "©️ _Whats App Movie Bot_ by *iruPC.net*"
+    },
+    "MOVIES_TOP": {
+      "description": "Movie Top Text",
+      "value": "💓 Visit *WhatsApp Movie Bot* for More Links 👇\n*wa.me/+94712882557*"
     }
   }
 }
