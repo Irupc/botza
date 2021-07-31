@@ -85,7 +85,7 @@ client.on('message', async msg => {
         var data = await movies.mainF(msg.body.replace(".link ", ""));
         //console.log("data outputed");
         if (data == "") {
-            msg.reply("*😢 ඒක නම් මගෙ Data Base එකට Add කරල නෑ.*\n*movie එකේ අකුරු හරියටම දාල තියනවද කියල බලන්න 🤔*");
+            msg.reply(config.not_found);
         }
         else {
             //console.log("Coose else ");
@@ -97,7 +97,7 @@ client.on('message', async msg => {
         var data = await movies.mainF(msg.body.replace("link ", ""));
         //console.log("data outputed");
         if (data == "") {
-            msg.reply("*😢 ඒක නම් මගෙ Data Base එකට Add කරල නෑ.*\n*movie එකේ අකුරු හරියටම දාල තියනවද කියල බලන්න 🤔*");
+            msg.reply(config.not_found);
         }
         else {
             //console.log("Coose else ");
@@ -109,7 +109,7 @@ client.on('message', async msg => {
         var data = await movies.mainF(msg.body.replace("Link ", ""));
         //console.log("data outputed");
         if (data == "") {
-            msg.reply("*😢 ඒක නම් මගෙ Data Base එකට Add කරල නෑ.*\n*movie එකේ අකුරු හරියටම දාල තියනවද කියල බලන්න 🤔*");
+            msg.reply(config.not_found);
         }
         else {
             //console.log("Coose else ");
@@ -121,7 +121,7 @@ client.on('message', async msg => {
         var data = await movies.mainF(msg.body.replace(".Link ", ""));
         //console.log("data outputed");
         if (data == "") {
-            msg.reply("*😢 ඒක නම් මගෙ Data Base එකට Add කරල නෑ.*\n*movie එකේ අකුරු හරියටම දාල තියනවද කියල බලන්න 🤔*");
+            msg.reply(config.not_found);
         }
         else {
             //console.log("Coose else ");
@@ -133,7 +133,7 @@ client.on('message', async msg => {
         var data = await sub.mainF(msg.body.replace(".sub ", ""));
         //console.log("data outputed");
         if (data == "") {
-            msg.reply("*😢 ඒක නම් මගෙ Data Base එකට Add කරල නෑ.*\n*movie එකේ අකුරු හරියටම දාල තියනවද කියල බලන්න 🤔*");
+            msg.reply(config.not_found);
         }
         else {
             //console.log("Coose else ");
@@ -145,7 +145,7 @@ client.on('message', async msg => {
         var data = await sub.mainF(msg.body.replace(".Sub ", ""));
         //console.log("data outputed");
         if (data == "") {
-            msg.reply("*😢 ඒක නම් මගෙ Data Base එකට Add කරල නෑ.*\n*movie එකේ අකුරු හරියටම දාල තියනවද කියල බලන්න 🤔*");
+            msg.reply(config.not_found);
         }
         else {
             //console.log("Coose else ");
