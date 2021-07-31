@@ -7,7 +7,6 @@ const { MongoClient } = require('mongodb');
 async function mainF(keyword) {
   //console.log("main Func Start");
   const uri = config.movie_db_url;
-  const limit_iru = config.limit_iru;
   const client = await new MongoClient(uri, {useUnifiedTopology: true});
 
   try {
@@ -18,7 +17,7 @@ async function mainF(keyword) {
     
     var key_word = keyword.replace("(", "").replace(")", "");
     //console.log(key_word);
-    const replyText = await search_Movie(mydb, key_word, limit_iru);
+    const replyText = await search_Movie(mydb, key_word);
     //console.log("Replay Text Returned");
     
     return replyText;
@@ -49,7 +48,7 @@ async function search_Movie(mydb,searchWord, limit_iru) {
   
   const query = await findQuesy(searchWord.split(" "));
 
-  const cursor = await mydb.find(query).project(projection).limit(limit_iru);
+  const cursor = await mydb.find(query).project(projection).limit(30);
     //console.log("query Generated");
   
   const allValues = await cursor.toArray();
